@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>카드 뒤집기</title>
 <style>
 .card{
 	display:inline-block;
@@ -61,8 +59,6 @@ var completed=[];
 var startTime;
 
 function shuffle(){
-//	console.log(colorList.length);xx
-	
 	for(var i=0;colorList.length>0;i++){
 		color=color.concat(colorList.splice(Math.floor(Math.random()*colorList.length),1));
 	}
@@ -70,7 +66,6 @@ function shuffle(){
 
 function cardsetting(width,height){
 	clickflag=false;
-	//console.log("3 color: ",color);xx
 	for(var i=0;i<width*height;i++){
 		
 		var card=document.createElement('div');
@@ -108,10 +103,8 @@ function cardsetting(width,height){
 								alert('성공!'+(endTime-startTime)/1000+'초 소요');
 								
 								document.querySelector('#wrapper').innerHTML='';
-								colorList=colorNames.slice(); //색깔후보 = 색깔들 
+								colorList=colorNames.slice();  
 								color=[];
-								//console.log(colors);xx
-								//console.log(colorNames);
 								completed=[];						
 								startTime;
 								shuffle();
